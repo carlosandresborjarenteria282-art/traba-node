@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel — Catálogo de productos</title>
+  <link rel="stylesheet" href="assets/css/estilos.css" />
+</head>
+<body class="panel-page">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <h1>Catálogo de productos</h1>
+      <div class="topbar-actions">
+        <span id="usuarioActual" class="usuario-actual"></span>
+        <button id="btnCerrarSesion" class="btn btn-ghost">Cerrar sesión</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="mensajes" class="mensajes"></section>
+
+    <section class="stats-grid" id="statsGrid">
+      <div class="stat-card">
+        <span class="stat-label">Total productos</span>
+        <span class="stat-value" id="statTotal">-</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Unidades disponibles</span>
+        <span class="stat-value" id="statUnidades">-</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Valor inventario</span>
+        <span class="stat-value" id="statValor">-</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Stock bajo (≤5)</span>
+        <span class="stat-value" id="statBajo">-</span>
+      </div>
+    </section>
+
+    <section class="toolbar">
+      <input type="search" id="buscador" placeholder="Buscar por nombre, descripción o categoría..." />
+      <button id="btnNuevo" class="btn btn-primary">Nuevo producto</button>
+    </section>
+
+    <section id="formSection" class="form-section oculto">
+      <h2 id="formTitulo">Nuevo producto</h2>
+      <form id="formProducto">
+        <input type="hidden" id="productoId" />
+        <div class="form-grid">
+          <div class="campo">
+            <label for="nombre">Nombre *</label>
+            <input type="text" id="nombre" required />
+          </div>
+          <div class="campo">
+            <label for="precio">Precio *</label>
+            <input type="number" id="precio" step="0.01" min="0" required />
+          </div>
+          <div class="campo">
+            <label for="stock">Stock *</label>
+            <input type="number" id="stock" step="1" min="0" required />
+          </div>
+          <div class="campo">
+            <label for="categoria">Categoría</label>
+            <input type="text" id="categoria" />
+          </div>
+          <div class="campo campo-full">
+            <label for="descripcion">Descripción</label>
+            <textarea id="descripcion" rows="3"></textarea>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
+          <button type="button" class="btn btn-ghost" id="btnCancelar">Cancelar</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="listado" class="listado">
+      <p class="cargando">Cargando productos...</p>
+    </section>
+  </main>
+
+  <script src="assets/js/catalogo.js"></script>
+</body>
+</html>

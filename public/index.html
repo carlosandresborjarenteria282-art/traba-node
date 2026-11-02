@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bienvenido — Catálogo de productos</title>
+  <link rel="stylesheet" href="assets/css/estilos.css" />
+</head>
+<body class="login-page">
+  <div class="login-bg">
+    <div class="login-blob blob-1"></div>
+    <div class="login-blob blob-2"></div>
+    <div class="login-blob blob-3"></div>
+  </div>
+
+  <main class="login-container">
+    <section class="login-card">
+      <div class="login-logo">
+        <div class="logo-icon">📦</div>
+        <h1>Catálogo</h1>
+        <p class="subtitle">Gestiona tus productos fácilmente</p>
+      </div>
+
+      <div class="auth-tabs">
+        <button class="tab-btn active" data-tab="login">Iniciar sesión</button>
+        <button class="tab-btn" data-tab="register">Registrarse</button>
+      </div>
+
+      <!-- Login -->
+      <form id="formLogin" class="auth-form" novalidate>
+        <div class="campo">
+          <label for="loginUsuario">Usuario</label>
+          <div class="input-wrap">
+            <span class="input-icon">👤</span>
+            <input type="text" id="loginUsuario" name="usuario" autocomplete="username" placeholder="tu usuario" required />
+          </div>
+        </div>
+        <div class="campo">
+          <label for="loginContrasena">Contraseña</label>
+          <div class="input-wrap">
+            <span class="input-icon">🔒</span>
+            <input type="password" id="loginContrasena" name="contrasena" autocomplete="current-password" placeholder="••••••" required />
+            <button type="button" class="toggle-pass" data-target="loginContrasena" aria-label="Mostrar contraseña">👁</button>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="btnLogin">
+          <span class="btn-text">Entrar</span>
+        </button>
+        <p id="mensajeLogin" class="mensaje" role="alert"></p>
+      </form>
+
+      <!-- Registro -->
+      <form id="formRegister" class="auth-form oculto" novalidate>
+        <div class="campo">
+          <label for="regUsuario">Usuario</label>
+          <div class="input-wrap">
+            <span class="input-icon">👤</span>
+            <input type="text" id="regUsuario" name="usuario" autocomplete="username" placeholder="elige un usuario" required minlength="3" />
+          </div>
+        </div>
+        <div class="campo">
+          <label for="regContrasena">Contraseña</label>
+          <div class="input-wrap">
+            <span class="input-icon">🔒</span>
+            <input type="password" id="regContrasena" name="contrasena" autocomplete="new-password" placeholder="mínimo 6 caracteres" required minlength="6" />
+            <button type="button" class="toggle-pass" data-target="regContrasena" aria-label="Mostrar contraseña">👁</button>
+          </div>
+        </div>
+        <div class="campo">
+          <label for="regContrasena2">Repetir contraseña</label>
+          <div class="input-wrap">
+            <span class="input-icon">🔒</span>
+            <input type="password" id="regContrasena2" autocomplete="new-password" placeholder="repite la contraseña" required />
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="btnRegister">
+          <span class="btn-text">Crear cuenta</span>
+        </button>
+        <p id="mensajeRegister" class="mensaje" role="alert"></p>
+      </form>
+    </section>
+  </main>
+  <script src="assets/js/catalogo.js"></script>
+</body>
+</html>
